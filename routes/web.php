@@ -36,3 +36,6 @@ Route::get('/inicio/vuelos/agregarAsiento',
 
 Route::get('/inicio/vuelos/verAsientos',
             [vuelosAsientosController::class, 'verAsientos'])->name('inicio.vuelo.verAsientos');
+
+Route::post('/inici/vuelo/agregarAsiento/guardar',
+            [tipoAsientosController::class, 'guardar'])->name('agregar.asiento.guardar');

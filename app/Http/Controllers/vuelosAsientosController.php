@@ -15,4 +15,5 @@ class vuelosAsientosController extends Controller
     public function verAsientos(){
         return view('vueloAsientos');
     }
+
 }

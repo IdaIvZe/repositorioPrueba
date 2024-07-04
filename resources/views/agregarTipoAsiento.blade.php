@@ -14,24 +14,25 @@
             <div class="col-md-6">
                 <h2>Crear Tipo Asiento</h2>
                 <br>
-                <form >
+                <form action="{{ route('agregar.asiento.guardar') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="color">Descripcion:</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" id="descripcion" name="descripcion"/>
                     </div>
                     <div class="form-group">
                         <label for="metros">Precio</label>
-                        <input type="text"class="form-control"/>
+                        <input type="text"class="form-control" id="precio" name="precio"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Estado:</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" id="estado" name="estado"/>
                     </div>
 
                     
                     <br>
                     <div class="form-group">
-                        <a class="btn btn-warning">Volver</a>
+                        <a class="btn btn-warning" href="{{route('asiento.tipos.mostrar')}}">Volver</a>
                         <button type="submit" class="btn btn-success">Guardar</button>                        
                     </div>
                 </form>
