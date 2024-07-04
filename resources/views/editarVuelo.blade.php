@@ -14,22 +14,25 @@
             <div class="col-md-6">
                 <h2>Editar Vuelo</h2>
                 <br>
-                <form >
+                <form action="{{route('inicio.vuelos.editar.guardar', $editarVuelo->numeroVuelo)}}" method="POST">
+                    @csrf
+                    @method('PUT')
+
                     <div class="form-group">
                         <label for="color">Numero:</label>
-                        <input type="text" class="form-control" readonly/>
+                        <input type="text" class="form-control" name="numero" value={{$editarVuelo->numeroVuelo}} readonly/>
                     </div>
                     <div class="form-group">
                         <label for="metros">Origen</label>
-                        <input type="text"class="form-control"/>
+                        <input type="text"class="form-control" name="origen" value={{$editarVuelo->origen}} required/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Destino:</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" name="destino" value={{$editarVuelo->destino}} required/>
                     </div>
                     <br>
                     <div class="form-group">
-                        <a class="btn btn-warning" href="{{route('inicio.vuelos')}}">Volver</a>
+                        <a class="btn btn-warning" href="{{route('inicio.vuelos.mostrar')}}">Volver</a>
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </div>
                 </form>

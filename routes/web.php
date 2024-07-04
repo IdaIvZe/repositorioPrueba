@@ -25,8 +25,11 @@ Route::get('/inicio/vuelos',
 Route::get('/inicio/vuelos/agregar',
             [vuelosController::class, 'agregarVuelos'])->name('inicio.vuelos.agregarNuevo');
 
-Route::get('/inicio/vuelos/editar',
+Route::get('/inicio/vuelos/editar/{id}',
             [vuelosController::class, 'editarVuelos'])->name('inicio.vuelos.editar');
+
+Route::put('/inicio/vuelos/editar/guardar/{id}',
+            [vuelosController::class, 'guardarEdicionVuelos'])->name('inicio.vuelos.editar.guardar');
 
 Route::get('/inicio/vuelos/eliminar/{id}',
             [vuelosController::class, 'eliminarVuelo'])->name('inicio.vuelos.eliminar');
@@ -34,7 +37,10 @@ Route::get('/inicio/vuelos/eliminar/{id}',
 Route::get('/inicio/vuelos/agregarAsiento',
             [vuelosAsientosController::class, 'agregarAsiento'])->name('inicio.vuelos.agregarAsiento');
 
-Route::get('/inicio/vuelos/verAsientos',
+Route::get('/inicio/vuelos/agregarAsiento/{id}',
+            [vuelosAsientosController::class, 'asientoVueloAgregar'])->name('inicio.vuelos.agregarAsiento.agregar');
+
+Route::get('/inicio/vuelos/verAsientos/{id}',
             [vuelosAsientosController::class, 'verAsientos'])->name('inicio.vuelo.verAsientos');
 
 Route::post('/inicio/vuelo/agregarAsiento/guardar',

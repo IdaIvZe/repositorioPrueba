@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::rename('tipo_asientos', 'tipoAsientos');
+        Schema::create('vuelo_asientos', function (Blueprint $table) {
+            $table->integer('idTipoAsiento');
+            $table->string('numeroVuelo');
+            $table->string('numeroAsiento', 5);
+        });
     }
 
     /**
@@ -20,7 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
-        Schema::rename('tipoAsientos', 'tipo_asientos');
+        Schema::dropIfExists('vuelo_asientos');
     }
 };

@@ -49,16 +49,26 @@ class vuelosController extends Controller
         }
     }
 
-    public function editarVuelos(){
-        return view('editarVuelo');
+    public function editarVuelos($id){
+        $editarVuelo = vuelo::find($id);
+        return view('editarVuelo',compact('editarVuelo'));
     }
 
+    public function guardarEdicionVuelos(Request $request, $id){
+        $editarVuelo = vuelo::find($id);
+        $editarVuelo->numeroVuelo = $request->numero;
+        $editarVuelo->origen = $request->origen;
+        $editarVuelo->destino = $request->destino;
+        $editarVuelo->save();
+        return redirect()->route('inicio.vuelos.mostrar');
+    }
+
+    
     public function eliminarVuelo($id){
         $eliminarVuelo = vuelo::find($id);
         $eliminarVuelo->delete();
 
         return redirect('/inicio/vuelos');
     }
-
 
 }

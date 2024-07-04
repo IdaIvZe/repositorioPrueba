@@ -31,7 +31,7 @@
             </tbody>
         </table>
         <div>
-            <a class="btn btn-warning" href="{{route('inicio.vuelos')}}">Volver</a>
+            <a class="btn btn-warning" href="{{route('inicio.vuelos.mostrar')}}">Volver</a>
         </div>
     </div>
 </body>
