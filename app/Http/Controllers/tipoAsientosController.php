@@ -32,4 +32,25 @@ class tipoAsientosController extends Controller
         //return redirect('/inicio/asientos/tipos');
         return redirect()->route('asiento.tipos.mostrar');
     }
+
+    public function cambiarEstadoAsiento(Request $request, $id){
+        $nvoEstado = tipoAsiento::find($id);
+        $nvoEstado->estado = 'I';
+        $nvoEstado->save();
+        return redirect()->route('asiento.tipos.mostrar');
+    }
+
+    public function editarAsiento(Request $request, $id){
+        $asientoEditar = tipoAsiento::find($id);
+        return view('editarAsiento', compact('asientoEditar'));
+    }
+
+    public function guardarEdicion(Request $request, $id){
+        $asientoEditar = tipoAsiento::find($id);
+        $asientoEditar->descripcion = $request->descripcion;
+        $asientoEditar->precio = $request->precio;
+        $asientoEditar->estado = $request->estado;
+        $asientoEditar->save();
+        return redirect()->route('asiento.tipos.mostrar');
+    }
 }

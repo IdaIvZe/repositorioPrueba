@@ -9,5 +9,6 @@ class tipoAsiento extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idTipoAsiento';
     public $timestamps = false;
 }

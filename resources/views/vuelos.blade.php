@@ -24,12 +24,13 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($vuelos as $vuelo)
             
                 <tr>
-                    <td>CM385</td>
-                    <td>San Pedro Sula</td>
-                    <td>San Jose</td>
-                    <td>235</td>
+                    <td>{{$vuelo->numeroVuelo}}</td>
+                    <td>{{$vuelo->origen}}</td>
+                    <td>{{$vuelo->destino}}</td>
+                    <td>{{$vuelo->numeroAsientos}}</td>
                     <td>
                         <a href="{{route('inicio.vuelos.editar')}}">Editar</a>
                     </td>
@@ -43,7 +44,8 @@
                         <a href="{{route('inicio.vuelo.verAsientos')}}">Ver Asientos</a>
                     </td>
                 </tr>
-            
+
+            @endforeach
             
         </tbody>
 

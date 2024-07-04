@@ -12,7 +12,7 @@
         <h1> Menu principal Aerolinea </h1>
         <br>
         <a class="btn btn-primary" href="{{route('asiento.tipos.mostrar')}}"> Tipos de Asiento   </a>
-        <a class="btn btn-primary" href="{{route('inicio.vuelos')}}"> Vuelos </a>
+        <a class="btn btn-primary" href="{{route('inicio.vuelos.mostrar')}}"> Vuelos </a>
     </div>
     
 </body>

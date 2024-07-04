@@ -14,26 +14,29 @@
             <div class="col-md-6">
                 <h2>Crear Nuevo Vuelo</h2>
                 <br>
-                <form >
+                <form action="{{ route('inicio.vuelos.agregarNuevo.guardar')}}" method="POST">
+                    @csrf
+                    @method('POST')
+
                     <div class="form-group">
                         <label for="color">Numero:</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" id="numero" name="numero"/>
                     </div>
                     <div class="form-group">
                         <label for="metros">Origen</label>
-                        <input type="text"class="form-control"/>
+                        <input type="text"class="form-control" id="origen" name="origen"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Destino:</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" name="destino"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Fecha Vuelo:</label>
-                        <input type="date" class="form-control"/>
+                        <input type="date" class="form-control" name="fechaVuelo"/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Cantidad:</label>
-                        <input type="number" class="form-control"/>
+                        <input type="number" class="form-control" name="cantidad"/>
                     </div>
 
                     

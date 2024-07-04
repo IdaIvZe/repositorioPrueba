@@ -34,10 +34,10 @@
                     <td>{{$tipoAsiento->precio}}</td>
                     <td>{{$tipoAsiento->estado}}</td>
                     <td>
-                        <a>Editar</a>
+                        <a href="{{ route('asiento.tipo.editar', $tipoAsiento->idTipoAsiento) }}">Editar</a>
                     </td>
                     <td>
-                        <a>Eliminar</a>
+                        <a href="{{ route('asiento.tipos.cambiarEstado', $tipoAsiento->idTipoAsiento) }}">Eliminar</a>
                     </td>
                 </tr>
             @endforeach

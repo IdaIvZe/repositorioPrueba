@@ -16,26 +16,29 @@
                 <br>
                 <div class="form-group">
                     <label for="color">Id Tipo Asiento:</label>
-                    <input type="text" class="form-control" value="1" readonly/>
+                    <input type="text" class="form-control" value="{{$asientoEditar->idTipoAsiento}}" readonly/>
                 </div>
-                <form >
+                <form action="{{route('asiento.tipo.editar.guardar', $asientoEditar->idTipoAsiento)}}" method="POST">
+                    @csrf
+                    @method('PUT')
+
                     <div class="form-group">
                         <label for="color">Descripcion:</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" value={{$asientoEditar->descripcion}} required/>
                     </div>
                     <div class="form-group">
                         <label for="metros">Precio</label>
-                        <input type="text"class="form-control"/>
+                        <input type="text"class="form-control" id="precio" name="precio" value={{$asientoEditar->precio}} required/>
                     </div>
                     <div class="form-group">
                         <label for="tipoPropiedad">Estado:</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" id="estado" name="estado" value={{$asientoEditar->estado}} required/>
                     </div>
 
                     
                     <br>
                     <div class="form-group">
-                        <a class="btn btn-warning">Volver</a>
+                        <a class="btn btn-warning" href="{{ route('asiento.tipos.mostrar') }}">Volver</a>
                         <button type="submit" class="btn btn-success">Guardar</button>                        
                     </div>
                 </form>
